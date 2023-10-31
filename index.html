@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculadora de Interés Compuesto</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <h1>Calculadora de Interés Compuesto</h1>
+  <form id="interestCalculator">
+    <label for="initialAmount">Monto Inicial:</label>
+    <input type="number" id="initialAmount" step="100000"><br>
+
+    <label for="interestRate">Tasa de Interés (porcentaje):</label>
+    <input type="number" id="interestRate" step="0.01"><br>
+
+    <label for="periods">Número de Períodos:</label>
+    <input type="number" id="periods"><br>
+
+    <button type="button" onclick="calculateInterest()">Calcular</button>
+  </form>
+  <p class="montofinal">El monto futuro es: <span id="result"></span></p>
+
+  <!-- Preguntas Frecuentes -->
+  <div class="div__preguntas">
+    <h2><a href="#" id="toggleButton" class="link-red">¿Cómo se calcula el interés compuesto?</a></h2>
+    <div id="answer" style="display: none;">
+      
+      <p>
+      Antes que nada explicare brevemente como se usa esta calculadora:
+      ingresas la cantidad de dinero que quieres invertir, por ejemplo 100000 (sin coma ni puntos).
+      en argentina el FCI de uala da 104% anual y genera a diario un interes del 0.284%. este interes diario va en el segundo casillero 0.284 sin el simbolo %
+      y por ultimo pones cuantos dias dejaras la plata invertida. 
+      <BR></BR>
+      **AVISO, EL CALCULO ES APROXIMADO Y DARÁ UN POCO MAS DE LO NORMAL YA QUE UALÁ NO TE GENERA INTERES COMPUESTO EL SABADO Y DOMINGO, PERO SI TE DA EL INTERES QUE TE GENERA ESOS DIAS JUNTOS EL DÍA LUNES POR LA TARDE.
+      POR LO CUAL EL INTERES SERA MENOR, CUANTO MAS DINERO TENGAS Y/O MAYOR SEA EL TIEMPO DE LA INVERSIÓN MAS DIFERENCIA HABRÁ** (para ser mas claros si te da un aproximado de 10 pesos diarios el lunes te pagara 30)
+
+      </p>
+
+      <p>
+        <h4>La fórmula para hacerlo es la siguiente:</h4>
+      <h3 class="h3-blue">Cf = Ci (1+R)^n</h3>
+      
+      <h4>Y cada componente de la fórmula significa:</h4>
+      <ul class="h3-blue">
+        <li>Cf: es la plata que tendremos como resultado final de los períodos de tiempo que deseamos.</li>
+        <li>Ci: es la plata que pondremos inicialmente. En nuestro ejemplo anterior serían los $100.000.</li>
+        <li>r: es el porcentaje de interés que recibiremos al final del día. Se pone en porcentaje por lo que si
+          queremos poner 0.284% debemos colocar como r igual a 0,00284 (al ser porcentaje equivale a 2 dividido 100).</li>
+        <li>n: será el numero de períodos o días que dejaras el dinero generando intereses. Si pensamos reinvertir 40 días, daremos el valor 40 a "n".</li>
+      </ul>
+        <p>Por lo tanto, 100mil pesos, al 0.284% diario x 40 dias da te entregará = El monto futuro es: 112012.36</p>
+        <p>Ahora si lo dejamos por 365 días = El monto futuro es: 6.283.569</p>
+        <p>Ahora si lo dejamos por 3650 días (10 años) = El monto futuro es: 3.129.795.660,18</p>
+        <p>casi tres mil ciento treinta millones</p>
+      </p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
